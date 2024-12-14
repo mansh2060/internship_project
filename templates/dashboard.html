@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title></head>
+<body>
+    <h1>Welcome, {{ user_id }}</h1>
+    <h2>Your Generated Content</h2>
+    <h3>Images</h3>
+    <div>
+        {% for item in images_with_prompts %}
+            <div style="margin: 20px;">
+                <img src="{{ item.image_path }}" alt="{{ item.prompt }}" style="width:200px;height:auto;margin:10px;">
+                <p><strong>Prompt:</strong> {{ item.prompt }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="/logout">Logout</a>
+</body>
+</html>
